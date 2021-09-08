@@ -45,4 +45,4 @@ jobs:
 
       # Perform tests
       - name: Test
-        run: docker run --network container:ruby-sinatra-pg-docker_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
+        run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
