@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  db:
+    build: ./db
+    ports:
+      - "5432:5432"
+  web:
+    volumes:
+      - .:/myapp
+    build: .
+    ports:
+      - "4567:4567"
+    links:
+      - db:db_link
+    depends_on:
+      - db
+    restart: on-failure
+    stdin_open: true
+    tty: true
