@@ -17,7 +17,7 @@ get '/' do
 end
 
 post '/user' do
-  "Hello World! from user post"
-	#@post = User.create(email: params[:email], name: params[:name])
-	#redirect '/'
+  #"Hello World! from user post"
+	@post = User.create(email: params[:email], name: params[:name])
+	redirect '/'
 end
