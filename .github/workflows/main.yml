@@ -46,3 +46,5 @@ jobs:
       # Perform tests
       - name: Test
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
+        run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused --data "email=curl@gmail.com&name=curlname" http://localhost:4567/user
+        run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
