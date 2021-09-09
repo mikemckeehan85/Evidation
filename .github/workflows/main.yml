@@ -46,7 +46,7 @@ jobs:
       # Perform tests
       - name: TestGetBeforePost
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
-      -name: TestPost
+      - name: TestPost
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused --data "email=curl@gmail.com&name=curlname" http://localhost:4567/user/
-      -name: testGetAfterPost
+      - name: testGetAfterPost
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
