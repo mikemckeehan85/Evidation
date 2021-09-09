@@ -47,9 +47,6 @@ jobs:
       - name: TestGetBeforePost
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
       - name: TestPost
-        #run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused --data "email=curl@gmail.com&name=curlname" http://localhost:4567/user/
-        #run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused --data "email=curl@gmail.com&name=curlname" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://localhost:4567/user/
-        #run: docker run --network container:evidation_web_1 appropriate/curl -d "email=curl@gmail.com&name=curlname" -X POST http://localhost:4567/user/
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused -d "email=curl@gmail.com&name=curlname" -X POST http://localhost:4567/user
       - name: testGetAfterPost
         run: docker run --network container:evidation_web_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:4567/
